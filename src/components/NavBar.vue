@@ -2,7 +2,7 @@
   <b-navbar class="is-spaced">
     <template slot="brand">
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        <h1 class="is-size-5">Readly</h1>
+        <h1 class="is-size-3">Readly</h1>
       </b-navbar-item>
     </template>
     <template slot="end">
