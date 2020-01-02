@@ -29,8 +29,9 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to, from) => {
-  document.title = to.meta.title
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title || 'Readly'
+  next()
 })
 
 export default router
