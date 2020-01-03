@@ -5,7 +5,7 @@ module.exports = {
     resolve: {
       alias: {
         Pages: path.resolve(__dirname, 'src/pages'),
-        Components: path.resolve(__dirname, 'src/pages')
+        Components: path.resolve(__dirname, 'src/components')
       }
     }
   }
