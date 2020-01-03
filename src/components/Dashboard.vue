@@ -11,6 +11,7 @@
         <b-menu-item label="Feed 2"></b-menu-item>
         <b-menu-item label="Feed 3"></b-menu-item>
       </b-menu-item>
+      <b-menu-item icon="plus" label="Add a feed" tag="router-link" :to="{path: '/add'}"></b-menu-item>
     </b-menu-list>
   </b-menu>
 </template>
