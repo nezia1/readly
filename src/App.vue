@@ -10,8 +10,8 @@
   </div>
 </template>
 <script>
-import NavBar from '@/components/NavBar'
-import Dashboard from '@/components/Dashboard'
+import NavBar from 'Components/NavBar'
+import Dashboard from 'Components/Dashboard'
 
 export default {
   name: 'app',
