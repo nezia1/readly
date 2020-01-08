@@ -5,7 +5,7 @@
       <b-menu-item icon="rss" :active="isActive" :expanded="isActive" @click="isActive = !isActive">
         <template slot="label" class="has-text-centered">
           Feeds
-          <b-icon class="is-pulled-right" :icon="isActive ? 'menu-down' : 'menu-up'"></b-icon>
+          <b-icon class="is-pulled-right" :icon="isActive ? 'menu-up' : 'menu-down'"></b-icon>
         </template>
         <b-menu-item label="Feed 1"></b-menu-item>
         <b-menu-item label="Feed 2"></b-menu-item>
