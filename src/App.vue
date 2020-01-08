@@ -1,11 +1,9 @@
 <template>
-  <div class="app">
+  <div class="app container is-fluid">
     <nav-bar />
-    <div class="container is-fluid">
-      <div class="columns">
-        <dashboard class="column is-one-quarter" />
-        <router-view class="column" />
-      </div>
+    <div class="columns">
+      <dashboard class="column is-one-fifth" />
+      <router-view class="column" />
     </div>
   </div>
 </template>
