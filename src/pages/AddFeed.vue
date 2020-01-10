@@ -10,7 +10,12 @@
     </div>
     <div class="column is-two-fifths"></div>
     <div class="column is-two-fifths">
-      <b-message type="is-success" has-icon>RSS feed was successfully added!</b-message>
+      <b-loading :active.sync="isLoading"></b-loading>
+      <b-message
+        type="is-success"
+        has-icon
+        :active.sync="isFeedAdded"
+      >RSS feed was successfully added!</b-message>
     </div>
   </div>
 </template>
@@ -20,7 +25,9 @@ export default {
   name: 'add-feed',
   data: function () {
     return {
-      rssLink: ''
+      rssLink: '',
+      isLoading: false,
+      isFeedAdded: false
     }
   }
 }
