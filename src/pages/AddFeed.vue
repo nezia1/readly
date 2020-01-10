@@ -10,7 +10,7 @@
     </div>
     <div class="column is-two-fifths"></div>
     <div class="column is-two-fifths">
-      <b-loading :active.sync="isLoading"></b-loading>
+      <b-loading :active.sync="isAddingFeed"></b-loading>
       <b-message
         type="is-success"
         has-icon
@@ -26,7 +26,7 @@ export default {
   data: function () {
     return {
       rssLink: '',
-      isLoading: false,
+      isAddingFeed: false,
       isFeedAdded: false
     }
   }
