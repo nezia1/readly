@@ -10,6 +10,7 @@
   "dependencies": {
     "buefy": "^0.8.0",
     "core-js": "^3.4.3",
+    "idb": "^5.0.0",
     "register-service-worker": "^1.6.2",
     "rss-parser": "^3.7.3",
     "vue": "^2.6.10",
