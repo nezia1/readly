@@ -16,7 +16,7 @@
         type="is-danger"
         has-icon
         :active="isFeedInvalid"
-      >The url you provided isn't a valid RSS link.</b-message>
+      >The url you provided isn't a valid RSS feed.</b-message>
     </div>
   </div>
 </template>
