@@ -3,7 +3,12 @@
     <div class="column is-three-fifths">
       <div class="control">
         <b-field label="RSS Link">
-          <b-input placeholder="Enter a valid RSS link" v-model="rssLink" icon="rss"></b-input>
+          <b-input
+            placeholder="Enter a valid RSS link"
+            v-model="rssLink"
+            icon="rss"
+            v-on:keyup.enter.native="addFeed(rssLink)"
+          ></b-input>
         </b-field>
         <b-button type="is-primary" v-on:click="addFeed(rssLink)">Add</b-button>
       </div>
