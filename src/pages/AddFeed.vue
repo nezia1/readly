@@ -25,6 +25,7 @@
 const Parser = require('rss-parser')
 const parser = new Parser()
 const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
+const { openDB } = require('idb')
 
 export default {
   name: 'add-feed',
@@ -37,15 +38,27 @@ export default {
     }
   },
   methods: {
-    // TODO: Add IndexedDB storage
+    // TODO: Add duplicates detection
     addFeed: async function (url) {
       try {
         this.isFeedInvalid = false
         this.isAddingFeed = true
         let feed = await parser.parseURL(CORS_PROXY + url)
+        const db = await openDB('readly', 1, {
+          upgrade (db) {
+            db.createObjectStore('feeds', {
+              keyPath: 'id',
+              autoIncrement: true
+            })
+          }
+        })
+        await db.add('feeds', {
+          title: feed.title,
+          feedUrl: feed.feedUrl,
+          description: feed.description
+        })
         this.isAddingFeed = false
         this.isFeedAdded = true
-        return feed
       } catch (error) {
         this.isFeedAdded = false
         this.isAddingFeed = false
