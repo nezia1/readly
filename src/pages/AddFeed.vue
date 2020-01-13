@@ -15,7 +15,7 @@
     </div>
     <div class="column is-two-fifths"></div>
     <div class="column is-two-fifths">
-      <b-loading :active.sync="isAddingFeed"></b-loading>
+      <b-loading :active="isAddingFeed"></b-loading>
       <b-message type="is-success" has-icon :active="isFeedAdded">RSS feed was successfully added!</b-message>
       <b-message
         type="is-danger"
