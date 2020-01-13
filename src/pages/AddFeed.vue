@@ -22,8 +22,8 @@
 </template>
 
 <script>
-let Parser = require('rss-parser')
-let parser = new Parser()
+const Parser = require('rss-parser')
+const parser = new Parser()
 const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
 
 export default {
