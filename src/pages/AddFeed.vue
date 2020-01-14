@@ -1,7 +1,7 @@
 <template>
   <div class="columns is-multiline">
     <div class="column is-three-fifths">
-      <add-feed-form v-on:addFeed="addFeed"></add-feed-form>
+      <add-feed-form v-on:create:feed="addFeed"></add-feed-form>
     </div>
     <div class="column is-two-fifths"></div>
     <div class="column is-two-fifths">
