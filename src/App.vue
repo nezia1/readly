@@ -2,8 +2,12 @@
   <div class="app container is-fluid">
     <nav-bar />
     <div class="columns">
-      <dashboard class="column is-one-fifth" />
-      <router-view class="column" />
+      <div class="column is-one-fifth">
+        <dashboard />
+      </div>
+      <div class="column">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>
