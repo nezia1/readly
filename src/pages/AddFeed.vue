@@ -1,17 +1,7 @@
 <template>
   <div class="columns is-multiline">
     <div class="column is-three-fifths">
-      <div class="control">
-        <b-field label="RSS Link">
-          <b-input
-            placeholder="Enter a valid RSS link"
-            v-model="rssLink"
-            icon="rss"
-            v-on:keyup.enter.native="addFeed(rssLink)"
-          ></b-input>
-        </b-field>
-        <b-button type="is-primary" v-on:click="addFeed(rssLink)">Add</b-button>
-      </div>
+      <add-feed-form v-on:addFeed="addFeed"></add-feed-form>
     </div>
     <div class="column is-two-fifths"></div>
     <div class="column is-two-fifths">
@@ -27,6 +17,7 @@
 </template>
 
 <script>
+import AddFeedForm from 'Components/AddFeedForm'
 const Parser = require('rss-parser')
 const parser = new Parser()
 const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
@@ -34,9 +25,11 @@ const { openDB } = require('idb')
 
 export default {
   name: 'add-feed',
+  components: {
+    AddFeedForm
+  },
   data: function () {
     return {
-      rssLink: '',
       isAddingFeed: false,
       isFeedAdded: false,
       isFeedInvalid: false
