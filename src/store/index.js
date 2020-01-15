@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+const uuidv4 = require('uuid/v4')
 const Parser = require('rss-parser')
 const parser = new Parser()
 const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
@@ -13,6 +14,7 @@ export default new Vuex.Store({
   mutations: {
     ADD_FEED (state, feed) {
       state.feeds.push({
+        id: uuidv4(),
         title: feed.title,
         feedUrl: feed.feedUrl,
         description: feed.description
