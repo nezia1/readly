@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 const uuidv4 = require('uuid/v4')
 const Parser = require('rss-parser')
 const parser = new Parser()
@@ -28,5 +29,7 @@ export default new Vuex.Store({
       commit('ADD_FEED', feed)
     }
   },
-  modules: {}
+  plugins: [createPersistedState({
+    paths: ['feeds']
+  })]
 })
