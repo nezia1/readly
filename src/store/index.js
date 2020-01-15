@@ -18,7 +18,8 @@ export default new Vuex.Store({
         id: uuidv4(),
         title: feed.title,
         feedUrl: feed.feedUrl,
-        description: feed.description
+        description: feed.description,
+        items: feed.items
       })
     }
   },
