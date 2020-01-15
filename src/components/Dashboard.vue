@@ -7,9 +7,7 @@
           Feeds
           <b-icon class="is-pulled-right" :icon="isActive ? 'menu-up' : 'menu-down'"></b-icon>
         </template>
-        <b-menu-item label="Feed 1"></b-menu-item>
-        <b-menu-item label="Feed 2"></b-menu-item>
-        <b-menu-item label="Feed 3"></b-menu-item>
+        <b-menu-item v-for="feed in feeds" v-bind:key="feed.id" v-bind:label="feed.title" tag="router-link" :to="{path: `/feeds/${feed.id}`}"></b-menu-item>
       </b-menu-item>
       <b-menu-item icon="plus" label="Add a feed" tag="router-link" :to="{path: '/add'}"></b-menu-item>
     </b-menu-list>
@@ -17,13 +15,17 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'dashboard',
   data: function () {
     return {
       isActive: false
     }
-  }
+  },
+  computed: mapState({
+    feeds: state => state.feeds
+  })
 }
 </script>
 
