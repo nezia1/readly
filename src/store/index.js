@@ -1,15 +1,30 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+const Parser = require('rss-parser')
+const parser = new Parser()
+const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    feeds: []
   },
   mutations: {
+    ADD_FEED (state, feed) {
+      state.feeds.push({
+        title: feed.title,
+        feedUrl: feed.feedUrl,
+        description: feed.description
+      })
+    }
   },
   actions: {
+    // TODO: Add duplicates detection
+    async addFeed ({ commit }, url) {
+      const feed = await parser.parseURL(CORS_PROXY + url)
+      commit('ADD_FEED', feed)
+    }
   },
-  modules: {
-  }
+  modules: {}
 })
