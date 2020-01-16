@@ -8,7 +8,7 @@
         v-on:keyup.enter.native="$emit('create:feed', rssLink)"
       ></b-input>
     </b-field>
-    <b-button type="is-primary" v-on:click="$emit('create:feed', rssLink)">Add</b-button>
+    <b-button type="is-link" v-on:click="$emit('create:feed', rssLink)">Add</b-button>
   </div>
 </template>
 
