@@ -14,34 +14,24 @@
     </div>
     <transition name="fade">
       <!-- TODO: close modal when clicking outside: https://gist.github.com/AnalyzePlatypus/22ca31c8f953db92eedadfe930bce31f -->
-      <div v-if="isModalOpened" class="modal is-active">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <p class="modal-card-title">{{ openedArticle.title }}</p>
-            <button class="delete" aria-label="close" v-on:click="closeArticle"></button>
-          </header>
-          <section class="modal-card-body">
-            <div class="content" v-html="openedArticle.content"></div>
-          </section>
-          <footer class="modal-card-foot">
-            <a
-              class="button is-link"
-              v-bind:href="openedArticle.link"
-              target="_blank"
-            >Read on website</a>
-          </footer>
-        </div>
-      </div>
+      <feed-modal
+        v-if="isModalOpened"
+        v-bind:opened-article="openedArticle"
+        v-on:close-article="closeArticle"
+      />
     </transition>
   </div>
 </template>
 
 <script>
+import FeedModal from 'Components/FeedModal.vue'
 import hljs from 'highlight.js'
 
 export default {
   name: 'feed',
+  components: {
+    FeedModal
+  },
   data: function () {
     return {
       isModalOpened: false,
@@ -69,6 +59,7 @@ export default {
     }
 
   },
+  // FIXME: hljs doesn't highlight inside the modal
   mounted () {
     hljs.initHighlightingOnLoad()
   }
