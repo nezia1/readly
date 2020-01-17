@@ -6,7 +6,7 @@
         <p class="modal-card-title">{{ openedArticle.title }}</p>
         <button class="delete" aria-label="close" v-on:click="$emit('close-article')"></button>
       </header>
-      <section class="modal-card-body">
+      <section class="modal-card-body has-text-justified">
         <div class="content" v-html="openedArticle.content"></div>
       </section>
       <footer class="modal-card-foot">
