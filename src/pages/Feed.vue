@@ -1,16 +1,7 @@
 <template>
   <div class="columns is-multiline">
     <div class="column is-half" v-for="article in articles" v-bind:key="article.guid">
-      <div class="card">
-        <div class="card-content">
-          <p class="title">{{article.title}}</p>
-          <p class="subtitle">{{article.creator}}</p>
-        </div>
-        <div class="card-footer">
-          <a class="card-footer-item" v-on:click.stop="openArticle(article)">Read</a>
-          <a class="card-footer-item">Save</a>
-        </div>
-      </div>
+      <article-card v-bind:article="article" v-on:open-article="openArticle(article)" />
     </div>
     <transition name="fade">
       <!-- TODO: close modal when clicking outside: https://gist.github.com/AnalyzePlatypus/22ca31c8f953db92eedadfe930bce31f -->
@@ -24,12 +15,14 @@
 </template>
 
 <script>
+import ArticleCard from 'Components/ArticleCard.vue'
 import ArticleModal from 'Components/ArticleModal.vue'
 import hljs from 'highlight.js'
 
 export default {
   name: 'feed',
   components: {
+    ArticleCard,
     ArticleModal
   },
   data: function () {
