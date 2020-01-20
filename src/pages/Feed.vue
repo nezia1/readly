@@ -17,7 +17,6 @@
 <script>
 import ArticleCard from 'Components/ArticleCard.vue'
 import ArticleModal from 'Components/ArticleModal.vue'
-import hljs from 'highlight.js'
 
 export default {
   name: 'feed',
@@ -51,10 +50,6 @@ export default {
       this.isModalOpened = false
     }
 
-  },
-  // FIXME: hljs doesn't highlight inside the modal
-  mounted () {
-    hljs.initHighlightingOnLoad()
   }
 }
 </script>
