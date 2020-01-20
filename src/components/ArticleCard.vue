@@ -7,7 +7,8 @@
     </div>
     <div class="card-footer">
       <a class="card-footer-item" v-on:click.stop="$emit('open-article')">Read</a>
-      <a class="card-footer-item">Save</a>
+      <!-- TODO: add save functionality -->
+      <!-- <a class="card-footer-item">Save</a> -->
     </div>
   </div>
 </template>
