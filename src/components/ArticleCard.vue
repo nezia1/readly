@@ -13,14 +13,13 @@
 </template>
 
 <script>
-const date = new Date()
-
 export default {
   name: 'article-card',
   props: ['article'],
   methods: {
     getReadableDate: function (isoDate) {
-      return date.toDateString(isoDate)
+      const date = new Date(isoDate)
+      return date.toDateString()
     }
   }
 }
