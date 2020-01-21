@@ -2,7 +2,8 @@
   <b-menu>
     <!-- TODO: Make menu sticky -->
     <b-menu-list label="Feeds">
-      <b-menu-item icon="newspaper" label="New articles"></b-menu-item>
+      <!-- TODO: add new articles feature -->
+      <!-- <b-menu-item icon="newspaper" label="New articles"></b-menu-item> -->
       <b-menu-item icon="rss" :active="isActive" :expanded="isActive" @click="isActive = !isActive">
         <template slot="label" class="has-text-centered">
           Feeds
