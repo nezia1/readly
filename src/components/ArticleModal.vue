@@ -1,5 +1,5 @@
 <template>
-  <div class="modal is-active">
+  <div class="modal is-active" v-on:keydown.esc="$emit('close-article')" v-focus tabindex="0">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
@@ -19,7 +19,14 @@
 <script>
 export default {
   name: 'article-modal',
-  props: ['openedArticle']
+  props: ['openedArticle'],
+  directives: {
+    focus: {
+      inserted: function (el) {
+        el.focus()
+      }
+    }
+  }
 }
 </script>
 
