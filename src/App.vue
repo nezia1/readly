@@ -17,6 +17,15 @@ import Dashboard from 'Components/Dashboard'
 
 export default {
   name: 'app',
+  metaInfo: {
+    htmlAttrs: {
+      lang: 'en'
+    },
+    meta: [
+      { name: 'description', content: 'Readly is a front-end RSS reader to get all your blogs in one place.' }
+    ],
+    title: 'Readly'
+  },
   components: {
     NavBar,
     Dashboard
