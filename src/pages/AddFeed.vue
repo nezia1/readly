@@ -45,6 +45,9 @@ export default {
         this.isFeedInvalid = true
       }
     }
+  },
+  metaInfo: {
+    title: 'Readly - Add'
   }
 }
 </script>

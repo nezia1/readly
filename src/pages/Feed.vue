@@ -33,6 +33,9 @@ export default {
   computed: {
     articles: function () {
       return this.$store.state.feeds.find(feed => feed.id === this.$route.params.id).items
+    },
+    feedTitle: function () {
+      return this.$store.state.feeds.find(feed => feed.id === this.$route.params.id).title
     }
   },
   methods: {
@@ -49,7 +52,11 @@ export default {
       this.openedArticle = {}
       this.isModalOpened = false
     }
-
+  },
+  metaInfo () {
+    return {
+      title: `Readly - ${this.feedTitle}`
+    }
   }
 }
 </script>
