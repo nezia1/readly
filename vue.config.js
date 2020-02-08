@@ -7,6 +7,7 @@ module.exports = {
         Pages: path.resolve(__dirname, 'src/pages'),
         Components: path.resolve(__dirname, 'src/components')
       }
-    }
+    },
+    productionSourceMap: false
   }
 }
