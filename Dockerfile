@@ -1,6 +1,7 @@
 FROM node:lts-alpine as builder
 WORKDIR /app
 COPY package*.json ./
+ADD nginx.conf.sigil ./
 RUN npm install
 COPY . .
 RUN npm run build
