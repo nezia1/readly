@@ -31,7 +31,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^9.4.3",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^8.0.0",
     "vue-cli-plugin-buefy": "^0.3.7",
     "vue-template-compiler": "^2.6.10"
